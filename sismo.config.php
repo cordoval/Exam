@@ -34,8 +34,8 @@ $message = <<<MESSAGE
     %output%
 MESSAGE;
 
-$emailNotifier = new Sismo\Notifier\MailNotifier('cordoval@gmail.com', $subject, $message);
-$sf2->addNotifier($emailNotifier);
+$swiftNotifier = new Sismo\Notifier\SwiftNotifier('cordoval@gmail.com', $subject, $message);
+$sf2->addNotifier($swiftNotifier);
 
 return $sf2;
 
