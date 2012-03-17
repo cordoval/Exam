@@ -1,3 +1,4 @@
 #!/usr/bin/env sh
 #php ./phpspec-composer.php lib/PHPPeru/Spec -fdc
+git diff HEAD~1
 phpunit -c lib/PHPPeru/Test/phpunit.xml lib/PHPPeru/Test
