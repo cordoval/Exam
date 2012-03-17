@@ -22,7 +22,7 @@ $sf2->addNotifier($notifier);
 
 $subject = '[%status_code%] %name% (%short_sha%)';
 $message = <<<MESSAGE
-  Build status changed to %STATUS%.
+ <h2>Build status changed to %STATUS%.</h2>
 
     commit: %sha%
     Author: %author%
