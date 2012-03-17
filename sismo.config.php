@@ -22,16 +22,17 @@ $sf2->addNotifier($notifier);
 
 $subject = '[%status_code%] %name% (%short_sha%)';
 $message = <<<MESSAGE
- <h2>Build status changed to %STATUS%.</h2>
+<h1>Build status changed to %STATUS%.</h1>
 
-    commit: %sha%
-    Author: %author%
-
+<strong>commit: %sha%</strong>
+<strong>Author: %author%</strong>
+<p>
     %message%
-
-    Sismo reports:
-
+</p>
+<h3>    Sismo reports:</h3>
+<p>
     %output%
+</p>
 MESSAGE;
 
 $swiftNotifier = new Sismo\Notifier\SwiftNotifier('cordoval@gmail.com', $subject, $message);
