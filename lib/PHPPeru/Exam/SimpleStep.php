@@ -43,15 +43,25 @@ class SimpleStep implements StepInterface {
     /**
      * {@inheritdoc}
      */
+    public function answer() {
+        if ($this->isAnswered()) {
+            throw new BadMethodCallException('Step has been already answered');
+        }        
+        $this->setStatus(self::STATUS_ANSWERED);
+        $this->eventDispatcher->dispatch(Events::onStepAnswered, new StepEvent($this));
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function read() {
         if (!$this->isNew()) {
             throw new BadMethodCallException('Step is not new');
-        }        
+        }
         $this->setStatus(self::STATUS_READ);
-        $this->eventDispatcher->dispatch(Events::onReadStep, new StepEvent($this));
+        $this->eventDispatcher->dispatch(Events::onStepRead, new StepEvent($this));
     }
-    
-    
+
     private function setDescription($description) {
         if( !empty($description) ) 
         {

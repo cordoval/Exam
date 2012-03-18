@@ -133,15 +133,15 @@ class SimpleExamTest extends TestCase
             ->method('abortCallback');
         $evd = $this->exam->getEventDispatcher();
         $evd->addListener(
-            Events::onStartExam,
+            Events::onExamStarted,
             array($startListener, 'startCallback')
         );
         $evd->addListener(
-            Events::onCompleteExam,
+            Events::onExamCompleted,
             array($completeListener, 'completeCallback')
         );
         $evd->addListener(
-            Events::onAbortExam,
+            Events::onExamAborted,
             array($abortListener, 'abortCallback')
         );
         $this->exam->start();
@@ -170,15 +170,15 @@ class SimpleExamTest extends TestCase
             ->with($this->isInstanceOf('PHPPeru\Exam\Event\ExamEvent'));
         $evd = $this->exam->getEventDispatcher();
         $evd->addListener(
-            Events::onStartExam,
+            Events::onExamStarted,
             array($startListener, 'startCallback')
         );
         $evd->addListener(
-            Events::onCompleteExam,
+            Events::onExamCompleted,
             array($completeListener, 'completeCallback')
         );
         $evd->addListener(
-            Events::onAbortExam,
+            Events::onExamAborted,
             array($abortListener, 'abortCallback')
         );
         $this->exam->start();

@@ -29,7 +29,7 @@ abstract class Events
      *
      * @var string
      */
-    const onStartExam = 'exam.start';
+    const onExamStarted = 'exam.start';
 
     /**
      * The exam.abort event is thrown each time a abort is started
@@ -40,7 +40,7 @@ abstract class Events
      *
      * @var string
      */
-    const onAbortExam = 'exam.abort';
+    const onExamAborted = 'exam.abort';
 
     /**
      * The exam.complete event is thrown each time a complete is started
@@ -51,7 +51,7 @@ abstract class Events
      *
      * @var string
      */
-    const onCompleteExam = 'exam.complete';
+    const onExamCompleted = 'exam.complete';
     
     /*
      * The step.read event is thrown each time a step is read
@@ -62,5 +62,16 @@ abstract class Events
      *
      * @var string
      */
-    const onReadStep = 'step.read';
+    const onStepRead = 'step.read';
+
+    /*
+     * The step.answered event is thrown each time a step is answered
+     * in the system.
+     *
+     * The event listener receives an PHPPeru\Exam\Event\StepEvent
+     * instance.
+     *
+     * @var string
+     */
+    const onStepAnswered = 'step.answered';
 }
