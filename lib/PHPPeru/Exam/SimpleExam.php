@@ -5,7 +5,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface,
     Symfony\Component\EventDispatcher\EventDispatcher,
     BadMethodCallException;
 
-
+use PHPPeru\Exam\Event\ExamEvent;
 use PHPPeru\Exam\Event\Events;
 
 /**
@@ -61,7 +61,7 @@ class SimpleExam implements ExamInterface
             throw new BadMethodCallException('Exam is not new');
         }
         $this->status = self::STATUS_STARTED;
-        $this->eventDispatcher->dispatch(Events::onStartExam, new Event($this));
+        $this->eventDispatcher->dispatch(Events::onStartExam, new ExamEvent($this));
     }
 
     /**
@@ -73,7 +73,7 @@ class SimpleExam implements ExamInterface
             throw new BadMethodCallException('Exam is not started');
         }
         $this->status = self::STATUS_ABORTED;
-        $this->eventDispatcher->dispatch(Events::onAbortExam, new Event($this));
+        $this->eventDispatcher->dispatch(Events::onAbortExam, new ExamEvent($this));
     }
 
     /**
@@ -85,7 +85,7 @@ class SimpleExam implements ExamInterface
             throw new BadMethodCallException('Exam is not started');
         }
         $this->status = self::STATUS_COMPLETED;
-        $this->eventDispatcher->dispatch(Events::onCompleteExam, new Event($this));
+        $this->eventDispatcher->dispatch(Events::onCompleteExam, new ExamEvent($this));
     }
 
     /**

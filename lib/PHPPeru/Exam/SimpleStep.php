@@ -6,7 +6,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface,
     Symfony\Component\EventDispatcher\EventDispatcher,
     BadMethodCallException;
 use PHPPeru\Exam\Event\Events;
-use PHPPeru\Exam\StepEvent;
+use PHPPeru\Exam\Event\StepEvent;
 
 /**
  * Description of SimpleStep

@@ -1,14 +1,15 @@
 <?php
-namespace PHPPeru\Exam;
+namespace PHPPeru\Exam\Event;
 
 use Symfony\Component\EventDispatcher\Event as BaseEvent;
+use PHPPeru\Exam\ExamInterface;
 
 /**
  * Provides information about an exam lifecycle event
  *
  * @author Marco Pivetta <ocramius@gmail.com>
  */
-class Event extends BaseEvent
+class ExamEvent extends BaseEvent
 {
     /**
      * The exam that triggered the event

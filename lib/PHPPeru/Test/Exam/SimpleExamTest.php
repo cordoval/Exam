@@ -121,12 +121,12 @@ class SimpleExamTest extends TestCase
         $startListener
             ->expects($this->once())
             ->method('startCallback')
-            ->with($this->isInstanceOf('PHPPeru\Exam\Event'));
+            ->with($this->isInstanceOf('PHPPeru\Exam\Event\ExamEvent'));
         $completeListener = $this->getMock('stdClass', array('completeCallback'));
         $completeListener
             ->expects($this->once())
             ->method('completeCallback')
-            ->with($this->isInstanceOf('PHPPeru\Exam\Event'));
+            ->with($this->isInstanceOf('PHPPeru\Exam\Event\ExamEvent'));
         $abortListener = $this->getMock('stdClass', array('abortCallback'));
         $abortListener
             ->expects($this->never())
@@ -158,7 +158,7 @@ class SimpleExamTest extends TestCase
         $startListener
             ->expects($this->once())
             ->method('startCallback')
-            ->with($this->isInstanceOf('PHPPeru\Exam\Event'));
+            ->with($this->isInstanceOf('PHPPeru\Exam\Event\ExamEvent'));
         $completeListener = $this->getMock('stdClass', array('completeCallback'));
         $completeListener
             ->expects($this->never())
@@ -167,7 +167,7 @@ class SimpleExamTest extends TestCase
         $abortListener
             ->expects($this->once())
             ->method('abortCallback')
-            ->with($this->isInstanceOf('PHPPeru\Exam\Event'));
+            ->with($this->isInstanceOf('PHPPeru\Exam\Event\ExamEvent'));
         $evd = $this->exam->getEventDispatcher();
         $evd->addListener(
             Events::onStartExam,

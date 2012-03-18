@@ -1,7 +1,8 @@
 <?php
-namespace PHPPeru\Exam;
+namespace PHPPeru\Exam\Event;
 
 use Symfony\Component\EventDispatcher\Event as BaseEvent;
+use PHPPeru\Exam\StepInterface;
 
 /**
  * Provides information about an step lifecycle event
@@ -20,7 +21,7 @@ class StepEvent extends BaseEvent
     /**
      * Default constructor
      *
-     * @param ExamInterface $step 
+     * @param StepInterface $step
      */
     public function __construct(StepInterface $step)
     {
