@@ -14,9 +14,7 @@ namespace PHPPeru\Exam\Fixtures;
 use PHPPeru\Exam\SimpleExam;
 
 /**
- * LoadData.php: Short description.
- *
- * Two line explanation.
+ * LoadData.php: Fixture class for loading information into the objects of our Exam library.
  *
  * @author Luis Cordova <cordoval@gmail.com>
  */
