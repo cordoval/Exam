@@ -1,10 +1,6 @@
 <?php
 namespace PHPPeru\Exam;
 
-use Symfony\Component\EventDispatcher\EventDispatcherInterface,
-    BadMethodCallException,
-    Iterator;
-
 /**
  * Describes a minimal API required for the concept of Exam Evaluation
  *
@@ -12,13 +8,13 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface,
  */
 interface ExamEvaluationInterface
 {    
-    public function isEvaluated();
+    function isEvaluated();
 
-    public function isCritic();
+    function isCritic();
 
-    public function isPassing();
+    function isPassing();
 
-    public function isFailing();
+    function isFailing();
 
-    public function score();
+    function score();
 }

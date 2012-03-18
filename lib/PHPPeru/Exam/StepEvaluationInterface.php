@@ -1,10 +1,6 @@
 <?php
 namespace PHPPeru\Exam;
 
-use Symfony\Component\EventDispatcher\EventDispatcherInterface,
-    BadMethodCallException,
-    Iterator;
-
 /**
  * Describes a minimal API required for the concept of each Step Evaluation
  *
@@ -12,11 +8,11 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface,
  */
 interface StepEvaluationInterface
 {    
-    public function isEvaluated();
+    function isEvaluated();
 
-    public function isCritic();
+    function isCritic();
 
-    public function isPassing();
+    function isPassing();
 
-    public function isFailing();
+    function isFailing();
 }
