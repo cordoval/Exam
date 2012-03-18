@@ -8,6 +8,5 @@
         "symfony/event-dispatcher": "dev-master",
         "cordoval/phpspec": "dev-master",
         "fzaninotto/faker": "dev-master"
-
     }
 }
