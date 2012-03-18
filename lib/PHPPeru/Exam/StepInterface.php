@@ -1,13 +1,20 @@
 <?php
 namespace PHPPeru\Exam;
 
+/**
+ * Describes a minimal API for step within an exam
+ *
+ * @author Luis Cordova <cordoval@gmail.com>
+ */
 interface StepInterface {
-     
-    public function getDescription();
-    public function isNew();
-    public function isRead();
-    public function isAnswered();
-    
+
+    function getDescription();
+
+    function isNew();
+
+    function isRead();
+
+    function isAnswered();
 }
 
 ?>

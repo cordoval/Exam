@@ -6,7 +6,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface,
     Iterator;
 
 /**
- * Descrobes a minimal API required for the concept of Exam
+ * Describes a minimal API required for the concept of Exam
  *
  * @author Marco Pivetta <ocramius@gmail.com>
  * @todo add methods to the interface besides the ones used as examples
